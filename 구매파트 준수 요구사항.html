@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사내 공지사항 - 전주페이퍼 구매방침 및 규정준수 지침</title>
+    <!-- Google Fonts (Noto Sans KR) & FontAwesome Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* Base Reset & Fonts */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background-color: #F4F6F9;
+            color: #333333;
+            line-height: 1.6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px 15px;
+        }
+
+        /* Layout Container */
+        .notice-container {
+            width: 100%;
+            max-width: 800px;
+            background-color: #FFFFFF;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+            overflow: hidden;
+            border: 1px solid #E2E8F0;
+        }
+
+        /* Header Section */
+        .notice-header {
+            background-color: #1E3A8A; /* Deep Navy Blue */
+            color: #FFFFFF;
+            padding: 36px 28px;
+            position: relative;
+        }
+        .notice-meta {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 14px;
+            flex-wrap: wrap;
+        }
+        .badge {
+            background-color: #2563EB; /* Bright Blue */
+            color: #FFFFFF;
+            font-size: 0.85rem;
+            font-weight: 500;
+            padding: 4px 12px;
+            border-radius: 20px;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .badge.target {
+            background-color: #475569; /* Slate Gray */
+        }
+        .notice-title {
+            font-size: 1.6rem;
+            font-weight: 700;
+            line-height: 1.4;
+            word-break: keep-all;
+        }
+
+        /* Main Content Section */
+        .notice-body {
+            padding: 32px 28px;
+        }
+
+        /* Section Titles */
+        .section-title {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #1E293B;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .section-title::before {
+            content: '';
+            display: inline-block;
+            width: 4px;
+            height: 18px;
+            background-color: #2563EB;
+            border-radius: 2px;
+        }
+
+        /* Highlight Cards Grid (3 Cards) */
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin-bottom: 36px;
+        }
+        .summary-card {
+            background-color: #F8FAFC;
+            border: 1px solid #E2E8F0;
+            border-top: 4px solid #2563EB;
+            border-radius: 8px;
+            padding: 20px 16px;
+            text-align: center;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .summary-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+        .card-icon {
+            width: 44px;
+            height: 44px;
+            background-color: #EFF6FF;
+            color: #2563EB;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.2rem;
+            margin: 0 auto 12px auto;
+        }
+        .card-text {
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: #334155;
+            word-break: keep-all;
+        }
+
+        /* Detailed Content Block */
+        .detail-content {
+            background-color: #FFFFFF;
+            border: 1px solid #E2E8F0;
+            border-radius: 8px;
+            padding: 24px;
+            font-size: 0.98rem;
+            color: #475569;
+            margin-bottom: 36px;
+        }
+        .detail-content ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        .detail-content li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 12px;
+        }
+        .detail-content li:last-child {
+            margin-bottom: 0;
+        }
+        .detail-content li::before {
+            content: '•';
+            color: #2563EB;
+            font-weight: bold;
+            font-size: 1.2rem;
+            position: absolute;
+            left: 0;
+            top: -2px;
+        }
+
+        /* Footer / Contact Section */
+        .notice-footer {
+            background-color: #F1F5F9;
+            border-top: 1px solid #E2E8F0;
+            padding: 20px 28px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            font-size: 0.9rem;
+            color: #64748B;
+        }
+        .contact-info {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #1E293B;
+            font-weight: 500;
+        }
+        .contact-info i {
+            color: #2563EB;
+        }
+
+        /* Responsive Styles for Mobile */
+        @media (max-width: 640px) {
+            .notice-header {
+                padding: 24px 20px;
+            }
+            .notice-title {
+                font-size: 1.35rem;
+            }
+            .notice-body {
+                padding: 24px 20px;
+            }
+            .summary-grid {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+            .summary-card {
+                display: flex;
+                align-items: center;
+                text-align: left;
+                padding: 16px;
+                gap: 16px;
+            }
+            .card-icon {
+                margin: 0;
+                flex-shrink: 0;
+            }
+            .notice-footer {
+                padding: 16px 20px;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <article class="notice-container">
+        <!-- 상단: 제목 + 시행일 및 대상 배지 -->
